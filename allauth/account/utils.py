@@ -11,6 +11,7 @@ from django.http import HttpResponseRedirect
 
 from emailconfirmation.models import EmailAddress, EmailConfirmation
 
+import signals as util_signals
 from signals import user_logged_in
 
 import app_settings
@@ -86,7 +87,7 @@ def perform_login(request, user, redirect_url=None):
 
 
 def complete_signup(request, user, success_url):
-    signals.user_signed_up.send(sender=user.__class__, 
+    util_signals.user_signed_up.send(sender=user.__class__, 
                                 request=request, 
                                 user=user)
     return perform_login(request, user, redirect_url=success_url)
