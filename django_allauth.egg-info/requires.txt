@@ -1,0 +1,3 @@
+oauth2
+python-openid
+django-email-confirmation

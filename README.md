@@ -1,0 +1,4 @@
+django-allauth
+==============
+
+django-allauth
